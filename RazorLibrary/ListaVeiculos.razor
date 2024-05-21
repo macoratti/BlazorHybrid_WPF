@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<h1>Lista de Veículos</h1>
+
+<div class="container">
+    <div class="row">
+        @foreach (var veiculo in Veiculos)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="@veiculo.Imagem" class="card-img-top" alt="@veiculo.Nome">
+                    <div class="card-body">
+                        <h5 class="card-title">@veiculo.Nome</h5>
+                        <p class="card-text">Modelo: @veiculo.Modelo - Ano: @veiculo.Ano</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<Veiculo> Veiculos = new List<Veiculo>()
+    {
+        new Veiculo() { Id = 1, Nome = "Ford Mustang GT", Modelo = "2023", Ano = 2023, Imagem = "https://www.macoratti.net/Imagens/Carros/carro1.jpg" },
+        new Veiculo() { Id = 2, Nome = "Chevrolet Camaro", Modelo = "2022", Ano = 2022, Imagem = "https://www.macoratti.net/Imagens/Carros/carro2.jpg" },
+        new Veiculo() { Id = 3, Nome = "Dodge Challenger", Modelo = "2021", Ano = 2021, Imagem = "https://www.macoratti.net/Imagens/Carros/carro3.jpg" },
+        new Veiculo() { Id = 4, Nome = "Mercedes GTH", Modelo = "2021", Ano = 2021, Imagem = "https://www.macoratti.net/Imagens/Carros/carro4.jpg" }
+    };
+}
